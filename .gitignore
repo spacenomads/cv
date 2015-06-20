@@ -1,18 +1,39 @@
-*.loa
+# Created by https://www.gitignore.io
+
+### Sass
+.sass-cache
+*.css.map
+
+### Node
+# Logs
+logs
 *.log
-*.lot
-*.lof
-*.aux
-*.out
-*.toc
-*.fdb_latexmk
-*.bbl
-*.bcf
-*.blg
-*.run.xml
-*.thm
-*.gnuplot
-*.synctex.gz
-*.synctex.gz(busy)
-*.auxlock
-cv-blx.bib
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+### Bower
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+### OSX / WINDOWS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+

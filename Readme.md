@@ -1,11 +1,25 @@
-# About
-Latest version of my CV, typesetted in Helvetica and using colors inspired by Monokai (there is an `print` option which renders in black and white, and reverts the header to dark on light, if printing on paper is needed).
+# ENDEAVOUR101 - HTML Résumé template
 
-Uses TikZ for the header, XeTeX and fontspec to use Helvetica Neue, biblatex to print my publications and textpos for the aside.
+<!-- MarkdownTOC depth=3 autolink=true autoanchor=true -->
+
+- [About](#about)
+- [License](#license)
+- [Original TeX CV License](#original-tex-cv-license)
+
+<!-- /MarkdownTOC -->
 
 
-# License
+<a name="about"></a>
+## About
+Based on Adrien Friggeri's TeX CV template, this is a html version that can be uploaded to your own server or github Pages.
 
+
+<a name="license"></a>
+## License
+This work is licensed under a Creative Commons Zero 1.0 Universal License, so USE IT!
+
+<a name="original-tex-cv-license"></a>
+## Original TeX CV License
 Copyright (C) 2012, Adrien Friggeri
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
