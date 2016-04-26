@@ -4,6 +4,7 @@ var
 		concat       = require('gulp-concat'),
 		cssminifiy   = require('gulp-minify-css'),
 		connect      = require('gulp-connect'),
+		data         = require('gulp-data'),
 		gulp         = require('gulp'),
 		gutil        = require('gulp-util'),
 		jade         = require('gulp-jade'),
@@ -72,10 +73,11 @@ gulp.task('jade_templates', function() {
 
   gulp.src( src_folder + '/jade/*.jade')
   	.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-    .pipe(jade({
-      locals: YOUR_LOCALS,
-      pretty: true
-    }))
+		.pipe(data( function(file) {
+                  return require('./_source/data/cv.json');
+                } ))
+    .pipe(jade())
+
     .pipe(gulp.dest( dist_folder +'/'))
     .pipe( notify({message: 'JADE OK'}));
 });
