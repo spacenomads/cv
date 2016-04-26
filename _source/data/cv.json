@@ -1,3 +1,15 @@
 {
-	"Name": "Harry Simmons"
+	"full_name": "Harry Simmons",
+	"main_role": "Kick-Ass Role Warrior",
+	"main_location": "Futfihe, MI",
+	"contact": {
+		"Email": "mailto:udor@sijjo.pa",
+		"Skype": "skype:skypehandler?chat",
+		"linkedin":"http://linkedin/you"
+	},
+	"social": {
+		"Twitter": "https://twitter.com/twitterhandler",
+		"Github": "https://github.com/githubhandler",
+		"TraktTV":"https://trakt.tv/users/trakthandler"
+	}
 }

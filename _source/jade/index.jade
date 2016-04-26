@@ -1,12 +1,8 @@
 //- Main index
 - var dev = true;
-- var lang = 'es';
+- var lang = 'en';
 - var page_title = "Profile - Responsive CV template";
-- var full_name = 'Larry Simmons';
-- var main_role = 'Kick-Ass Role Warrior';
-- var main_location = 'Futfihe, MI';
-- var contact = {'Email': 'mailto:udor@sijjo.pa','Skype': 'skype:skypehandler?chat', 'linkedin':'http://linkedin/you'};
-- var social = {'Twitter': 'https://twitter.com/twitterhandler','Github': 'https://github.com/githubhandler','TraktTV':'https://trakt.tv/users/trakthandler'};
+
 
 
 	doctype html
@@ -57,7 +53,7 @@
 										a(href="")
 											abbr(title="Español") Es
 							.avatar: img.img.photo(src="https://randomuser.me/api/portraits/men/32.jpg")
-							h1.title.full_name= Name
+							h1.title.full_name= full_name
 							h2.role= main_role
 							div.user_info
 								if main_location
