@@ -1,0 +1,202 @@
+//- Main index
+- var dev = true;
+- var lang = 'es';
+- var page_title = "Profile - Responsive CV template";
+- var full_name = 'Larry Simmons';
+- var main_role = 'Kick-Ass Role Warrior';
+- var main_location = 'Futfihe, MI';
+- var contact = {'Email': 'mailto:udor@sijjo.pa','Skype': 'skype:skypehandler?chat', 'linkedin':'http://linkedin/you'};
+- var social = {'Twitter': 'https://twitter.com/twitterhandler','Github': 'https://github.com/githubhandler','TraktTV':'https://trakt.tv/users/trakthandler'};
+
+
+	doctype html
+	html(class="no-js", lang= lang)
+
+		head
+			meta(charset='utf-8')
+			title= page_title
+			meta(name='viewport' content='width=device-width, initial-scale=1')
+			<!--[if IE]>
+			meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+			<![endif]-->
+
+			
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-precomposed.png')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-57x57-precomposed.png', size='apple-touch-icon-57x57')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-72x72-precomposed.png', size='apple-touch-icon-72x72')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-114x114-precomposed.png', size='apple-touch-icon-114x114')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-120x120-precomposed.png', size='apple-touch-icon-120x120')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-144x144-precomposed.png', size='apple-touch-icon-144x144')
+			//- link(rel='apple-touch-icon', href='apple-touch-icon-155x155-precomposed.png', size='apple-touch-icon-155x155')
+
+			//- meta(name='application-name', content= page_title)
+			//- meta(name='msapplication-TileColor', content='#ECECEC')
+			//- meta(name='msapplication-TileImage', content='/w8-tile.png')
+			//- meta(name='msapplication-tooltip', content=title)
+			
+
+			link(rel='icon' href='favicon.ico')
+			link(rel='stylesheet', href='assets/css/main.css')
+			//- link(rel='stylesheet' href='assets/css/shame.css')
+			//- link(rel='stylesheet' href='assets/css/client.css')
+
+			script(src='assets/js/vendor/modernizr-2.8.3.min.js')
+
+		// Body
+		body.resume(class=dev ? "_dev" : "")
+			
+			.page
+				header#header(role="banner", data-background="#424242", data-opacity="1")
+					.wrapper
+							nav.language_selector
+								ul.languages
+									li.lang
+										a(href="")
+											abbr(title="English") En
+									//- li.lang
+										a(href="")
+											abbr(title="Español") Es
+							.avatar: img.img.photo(src="https://randomuser.me/api/portraits/men/32.jpg")
+							h1.title.full_name= full_name
+							h2.role= main_role
+							div.user_info
+								if main_location
+									.location= main_location
+								if contact
+									ul.contact_me_by
+										each val, index in contact
+											li.item
+												a(href= val, class=" icon ext " + index.toLowerCase()): span.text= index 
+							.see_cv: a.anchor(href="#main") CV
+				<!-- #header -->
+
+				main#main(role="main")
+					.wrapper
+						.resume_container
+							.resume_content
+							
+								section.resume_section.interests_section
+									h3.section_title.title(data-section-color="#ffcc00") Interests
+									p.description Statistical analysis, data visualization, big data, graph theory
+								<!-- .resume_section -->
+
+								section.resume_section.education_section
+									h3.section_title.title Education
+									ul.resume_list
+										li.item
+											div.time 2015
+											h4.title BSc in Mathematics
+											div.aside.organization Complutense University of Madrid
+											p.description Graduate thesis: Topological graph theory: from Königsberg to urban traffic.
+										li.item
+											div.time 2010 - 2011
+											h4.title BSc in Mathematics
+											div.aside.organization Graz University of Technology
+											p.description Erasmus scholarship
+								<!-- .resume_section -->
+
+								section.resume_section.experience_section
+									h3.section_title.title Experience
+									ul.resume_list
+										li.item
+											div.time 2015 - Now
+											h4.title Havas Media, Madrid
+											div.aside Data Scientist/Lover
+											p.description Data mining and visualization with tools like R, PHP and Tableau. Development of tools with VBA for media planners.
+
+										li.item
+											div.time 2015
+											h4.title CloudMas, Madrid
+											div.aside Data Science Internship
+											p.description Development of dynamic reports with Javascript data visualization library D3js. Web analytics. Machine learning with Python library OpenCV.
+										</li>
+
+										li.item
+											div.time 2013 - 2014
+											h4.title Vodafone, Madrid
+											div.aside Continual Service Improvement Internship
+											p.description KPIs analysis and monitoring, projects organization and follow up meetings, data analysis, management of data bases.
+								<!-- .resume_section -->
+
+								section.resume_section.courses_section
+									h3.section_title.title Courses
+									ul.resume_list 
+										li.item
+											div.time 2015
+											h4.title Mobility and sustainability in Smart Cities
+											div.aside Complutense University
+											p.description General overview of sustainable transport trends in Smart Cities
+
+										li.item
+											div.time 2014
+											h4.title Excel in depth
+											p.description Microsoft Excel in depth
+
+										li.item
+											div.time 2014
+											h4.title Access in depth
+											p.description Microsoft Access in depth
+
+										li.item
+											div.time 2014
+											h4.title The Analytics Edge MIT
+											p.description Analytics methods in R
+								<!-- .resume_section -->
+							<!-- .resume_content -->
+							aside.contact_and_personal_skils
+								section.pro_skills
+
+									div.area
+										h5.title Contact
+										ul.details
+											if main_location
+												li.item= main_location
+											if contact_email
+												li.item 
+													a(href="mailto:" + contact_email) Email
+											if contact_skype
+												li.item 
+													a(href="skype://" + contact_skype) Skype
+									<!-- .area -->
+
+									div.area
+										h5.title Languages
+										ul.skills.details
+											li.item Spanish - native
+											li.item English - fluid
+											li.item German - notions
+									<!-- .area -->
+
+									div.area
+										h5.title Programming
+										ul.skills.details
+											li.item
+												span.tex.love_it T<span class="tex_e">e</span>&#935;</span>
+											li.item Matlab &amp; Mathematica
+											li.item Python (numpy, pandas), R
+											li.item MySQL, VBA
+											li.item D3js, HTML
+									<!-- .area -->
+							<!-- .contact_and_personal_skils -->
+				<!-- #main -->
+
+				footer#footer(role="contentinfo") 
+						if social
+							section.social_footer
+								h4.title Find me on 
+								ul.find_me
+									each val, index in social
+										li.item
+											a(href= val, class= "net ico ext " + index.toLowerCase(), title= "Sígueme en " + index): span.text= "Sígueme en " + index
+							
+				<!-- #footer -->
+
+
+
+
+			//- Javascripy
+			script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+			script.
+				window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.0.min.js"><\/script>')
+			script(src='assets/js/main.js')
+			script(src='assets/js/plugins.js')

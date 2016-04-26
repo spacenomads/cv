@@ -1,0 +1,24 @@
+﻿/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+Nomad: Abel Cabans
+Twitter: @abelcabans
+From:Barcelona, Catalonia, Spain
+
+Nomad: Carlos Mañas
+Twitter: @oneeyedman
+From:Madrid, Spain
+
+Looking for a job: Beatriz Hernandez
+Twitter: @chucheria
+From:Madrid, Spain
+
+/* THANKS */
+
+
+/* SITE */
+Language: English / Castellano
+Doctype:HTML5
+IDE: Sublime Text, ShareLaTeX, gulp, git, slack

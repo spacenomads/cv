@@ -1,0 +1,23 @@
+%row {
+  @media screen and (min-width: 600px ) {
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+    margin: em($gap) 0;
+    padding: 0 em($gap);
+  }
+}
+
+%cell {
+  margin: em($gap) 0;
+
+  @media screen and (min-width: 600px ) {
+    display: table-cell;
+    box-sizing: border-box;
+    padding-right: em($gap);
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

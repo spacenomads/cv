@@ -1,0 +1,521 @@
+/*
+* > IMPORTS
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import 'mixins';
+@import 'extends';
+@import 'settings';
+@import 'grid';
+@include fontFace( 'fontAwesome' ,'../fonts/fontawesome-webfont' );
+
+%ico {
+  display: none;
+
+  .fontface & {
+    font-family: 'fontAwesome';
+    display: inline;
+  }
+}
+
+/*
+* > LAYOUT
+ */
+@include snitch();
+
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  font: 100% 'lato', arial, sans-serif;
+  margin: 0;
+}
+
+.page {
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0 em($gap);
+}
+
+@include mq( $d_sitewidth + ($gap * 2) ) {
+  .wrapper {
+    max-width: em($d_sitewidth);
+    margin: 0 auto;
+  }
+}
+
+/*
+* >> Header
+ */
+
+#header {
+  padding: 0;
+  text-align: center;
+  color: $c_white;
+  background: $c_gray;
+  height: 100%;
+  display: table;
+  width: 100%;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  .wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    margin: 0;
+    height: 100%;
+  }
+
+  .avatar {
+    margin: em( 50 ) auto 0;
+
+    .photo {
+      box-shadow: 0 0 0 5px rgba($c_white, .2);
+      width: 40%;
+      max-width:em( 256 );
+      border-radius: 50%;
+    }
+  }
+
+  .full_name {
+    font-size: em(72 / 2.25);
+    font-weight: 300;
+    margin: .5em 0 .15em;
+
+    b {
+      margin-left: -.2em;
+    }
+  }
+
+  .role {
+    font-size: em(40 / 2);
+    font-weight: 300;
+    margin: 0 0 1em;
+  }
+
+  .user_info {
+    padding-bottom: em( 100 );
+  }
+
+  .location {
+    font-size: em(40 / 3);
+    font-weight: 300;
+    display: inline;
+    margin: -.5em 0;
+
+    &::before {
+      margin-right: .5em;
+      content: '\f041';
+      @extend %ico;
+    }
+
+    &::after {
+      padding: 0 .25em 0 .5em;
+      content: '/';
+    }
+  }
+
+  .contact_me_by {
+    display: inline;
+    margin: .5em 0;
+    @extend %no_list;
+
+    .item {
+      font-size: em(40 / 3);
+      display: inline;
+
+      & + .item {
+        &::before {
+          padding: 0 .5em 0 .25em;
+          content: '-';
+        }
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .icon {
+        .fontface & {
+          text-decoration: none;
+
+          .text {
+            display: inline-block;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+
+      .email {
+        &::before {
+          content: '\f0e0';
+          @extend %ico;
+        }
+      }
+
+      .skype {
+        &::before {
+          content: '\f17e';
+          @extend %ico;
+        }
+      }
+
+      .linkedin {
+        &::before {
+          content: '\f08c';
+          @extend %ico;
+        }
+      }
+    }
+  }
+
+  .see_cv {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 2em;
+  }
+
+  .anchor {
+    border: 1px solid $c_white;
+    padding: .45em 0;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 1em;
+    color: $c_white;
+    text-decoration: none;
+    width: em( 100 );
+  }
+}
+
+@include mq( 600 ) {
+  #header {
+    .full_name {
+      font-size: em(72 / 2);
+    }
+
+    .location, .contact_me_by .item {
+      font-size: em(40 / 2.5);
+    }
+  }
+}
+
+@include mq( 768 ) {
+  #header {
+    .full_name {
+      font-size: em(72);
+    }
+  }
+}
+
+/*
+* >>> Lang
+ */
+
+.language_selector {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.languages {
+  display: table;
+  width: em(60);
+  margin: 0;
+  text-align: right;
+  @extend %no_list;
+}
+
+.lang {
+  display: table-cell;
+  width: 50%;
+
+  a {
+    font-size: em(14);
+    line-height: em(30, 14);
+    display: block;
+    transition: background-color ease .3s;
+    text-align: center;
+    text-decoration: none;
+    color: $c_gray;
+    background: $c_light_gray;
+
+    &:hover {
+      background-color: $c_white;
+    }
+  }
+}
+
+
+
+
+
+/*
+* >> Footer
+ */
+#footer {}
+
+.social_footer {
+  .title {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .find_me {
+    display: table;
+    width: 100%;
+    @extend %no_list;
+  }
+  .item  {
+    display: table-cell;
+    height: em( 80 );
+    background: red;
+  }
+  a {
+    display: block;
+    text-align: center;
+    background: blue;
+    height: 100%;
+    position: relative;
+    &::before {
+      color: $c_white;
+      content: ':D';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'fontAwesome';
+      font-size: 1.5em;
+    }
+    .text {
+      display:block;
+      height: 0;
+      overflow: hidden;
+      width: 0;
+    }
+    &.twitter {
+      background: #00aced;
+      &::before {
+        content: '\f099';
+      }
+    }
+    &.sharelatex {
+      background: #AC3524;
+    }
+    &.github {
+      background: #333333;
+      &::before {
+        content: '\f113';
+      }
+    }
+    &.goodreads {
+      background: #E2E0D0;
+      &::before {
+        color:#47301F;
+        content: '\f097';
+      }
+    }
+    &.trakttv {
+      background: #F11B18;
+      &::before {
+        content: '\f008';
+      }
+    }
+  }
+}
+
+
+
+
+/*
+* > CONTENT
+ */
+
+#main {
+  //min-height: 100%;
+}
+
+.resume_container {
+  overflow: hidden;
+  padding: em($gap) 0;
+}
+
+.resume_content {
+  //
+}
+
+.contact_and_personal_skils {
+  //
+}
+
+@include mq( 768 ) {
+  .resume_content {
+    float: right;
+    width: per(795 - 90 - $gap*1.5);
+  }
+
+  .contact_and_personal_skils {
+    float: left;
+    width: per(185 + 90 + $gap*1.5);
+  }
+}
+
+/*
+* >> Main sections
+ */
+
+.resume_section {
+  line-height: 140%;
+  margin-bottom: em($gap*1.5);
+
+  .section_title {
+    font-size: em(28);
+    margin: 0 0 em($gap / 2, 24);
+
+    b {
+      color: $c_blue;
+    }
+  }
+
+  &.education_section .title b {
+    color: $c_red;
+  }
+
+  &.experience_section .title b {
+    color: $c_orange;
+  }
+
+  &.courses_section .title b {
+    color: $c_green;
+  }
+}
+
+.resume_list {
+  @extend %no_list;
+
+  .time {
+    font-size: em(14);
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .aside {
+    font-size: em(14);
+    font-weight: 300;
+  }
+
+  .description {
+    margin-top: 0;
+  }
+}
+
+@include mq( 560 ) {
+  .resume_list {
+    .item {
+      position: relative;
+      padding-left: em(90);
+    }
+
+    .time {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .title {
+      width: 50%;
+    }
+  }
+}
+
+@include mq( 900 ) {
+  .resume_list {
+    .aside {
+      font-size: em(12);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      text-align: right;
+    }
+  }
+}
+
+/*
+* >> Pro skills
+ */
+
+.pro_skills {
+  //background: red;
+  margin-right: em($gap * 1.5);
+  //text-align: right;
+
+  .area {
+    line-height: 140%;
+    margin-bottom: em($gap);
+  }
+
+  .title {
+    font-size: em(22);
+    font-weight: bold;
+    margin: 0 0 .25em;
+  }
+
+  .details {
+    @extend %no_list;
+  }
+}
+
+@include mq( 768 ) {
+  .pro_skills {
+    padding-top: .2em;
+    text-align: right;
+  }
+}
+
+/*
+* >> Fun details
+ */
+
+.love_it {
+  &::before {
+    font-size: .95em;
+    margin-right: .2em;
+    content: '❤';
+    color: #fb4485 !important;
+  }
+}
+
+.tex {
+  position: relative;
+  text-transform: uppercase;
+
+  .tex_e {
+    position: relative;
+    top: em(4);
+    left: em(-2);
+    margin-right: em(-3);
+  }
+}
+
+.latex {
+  position: relative;
+  text-transform: uppercase;
+
+  .latex_a {
+    font-size: .75em;
+    position: relative;
+    top: em(-4);
+    left: em(-6);
+    margin-right: em(-7);
+  }
+}

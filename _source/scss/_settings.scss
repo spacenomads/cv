@@ -1,0 +1,41 @@
+// Colors
+$c_white:#fff;
+$c_black:#000;
+
+$c_dark_gray: #333333;
+$c_gray: #4D4D4D;
+$c_light_gray: #999999;
+$c_blue: #6CE0F1;
+$c_red: #FB4485;
+$c_orange: #FDA333;
+$c_green: #C2E15F;
+$c_purple: #D3A4F9;
+
+$c_header: $c_gray;
+
+$c_title: $c_gray;
+$c_text: $c_gray;
+$c_secondary_text: $c_light_gray;
+$c_link: $c_blue;
+
+
+// dimensions
+$d_sitewidth: 980;
+$d_radius:5px;
+$gap: 30;
+
+// Fonts
+$f_base: arial, sans-serif;
+$f_font:'helvetica', $f_base;
+$f_font_size: 16;
+$f_line_height: 130%;
+
+// Effects
+$base_time_transition: .5s;
+
+// Paths
+$theme: 'layout/2015/';
+
+// Levels
+$z_index: background, menu, content;
+
